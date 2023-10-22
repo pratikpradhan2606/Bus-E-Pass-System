@@ -1,0 +1,62 @@
+
+.container {
+    max-width: 300px; /* Adjust the maximum width to your preference */
+    margin: 0 auto;
+    padding: 15px; /* Adjust the padding to reduce the form size */
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  form > div {
+    display: none;
+  }
+  
+  form > div:nth-child(1) {
+    display: block;
+  }
+  
+  form > div p {
+    font-size: 16px; /* Reduce font size */
+    margin: 15px 0; /* Reduce margins */
+  }
+  
+  form button {
+    margin: 10px 0;
+    font-size: 14px; /* Reduce button font size */
+    padding: 5px 10px; /* Reduce button padding */
+  }
+  
+  
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  background: #7d8083;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  margin-right: 10px;
+}
+
+.active {
+  background: #fad60a;
+  color: #fff;
+}
+
+.step-label {
+  font-size: 16px;
+}
