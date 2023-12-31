@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardBody, Col, Container, Row } from "reactstrap";
+import { Button, Card, CardBody, Col, Container, Row } from "reactstrap";
 import Base from "../components/Base";
-
 import register from '../assets/images/homepage_image.jpg'
 
 const Home = () => {
   const [backgroundColor, setBackgroundColor] = useState("blue");
   const colors = ["blue", "purple", "green"];
   const colorIndex = colors.indexOf(backgroundColor);
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setBackgroundColor(colors[(colorIndex + 1) % colors.length]);
@@ -59,6 +58,7 @@ const Home = () => {
        
       </Container>
     </Base>
+    
   );
 };
 
