@@ -3,7 +3,7 @@ import Vikas from "../Images/Vikas.jpg";
 import Sakshi from "../Images/Sakshi.jpg";
 import Vaishnavi from "../Images/Vaishnavi.jpg";
 import Shubhangi from "../Images/Shubhangi.jpg";
-import './About.css';
+import '../styles/About.css';
 
 const About = () => {
     return (

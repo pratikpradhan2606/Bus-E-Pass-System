@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink as ReactLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
+import axios from 'axios';
 import { useAuth0 } from "@auth0/auth0-react";
 import {
   Navbar,
@@ -17,12 +18,29 @@ import '../styles/header.css';
 function CustomNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+  
+  const [userProfile, setUserProfile] = useState({
+    id:'',
+    name: '', // User's Full Name
+    email: '', // User's Email
+    password:'',
+    about:''
+  });
+  
 
   const toggle = () => setIsOpen(!isOpen);
+  
+  const handleLogin = async (e) => {
+      loginWithRedirect({
+        // Specify where to redirect after login
+        redirectUri: `${window.location.origin}/dashboard`, // Replace with your dashboard route
+      });
+  };
 
   const activeStyle = {
     color: 'blue',
   };
+
   return (
     <div>
       <Navbar className='header-color' light expand="md">
@@ -45,18 +63,7 @@ function CustomNavbar() {
                 </NavLink>
               </NavItem>
             </div>
-            <div className='custom-button'>
-              <NavItem>
-                <NavLink
-                  tag={ReactLink}
-                  to="/services"
-                  activeClassName="active-link"
-                  style={window.location.pathname === '/services' ? activeStyle : {}}
-                >
-                  Services
-                </NavLink>
-              </NavItem>
-            </div>
+            
             <div className='custom-button'>
               <NavItem>
                 <NavLink
@@ -69,7 +76,7 @@ function CustomNavbar() {
                 </NavLink>
               </NavItem>
             </div>
-
+            
             <div className='custom-button'>
               <NavItem>
                 <NavLink
@@ -107,7 +114,7 @@ function CustomNavbar() {
                   Log Out
                 </Button>
               ) : (
-                <Button color="primary" onClick={() => loginWithRedirect()}>
+                <Button color="primary" onClick={handleLogin}>
                   Log In
                 </Button>
               )

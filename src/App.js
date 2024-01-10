@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Service';
-import Dashboard from './pages/Dashboard';
+import DashboardApp from './components/components/Dashboard/App/DashboardApp.jsx'
 import Contact from './pages/Contact';
 function App() {
   return (
@@ -12,8 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
-        <Route path='/services' element={<Services/>}/>
+        <Route path='/dashboard' element={<DashboardApp/>}/>
         <Route path='/contact' element={<Contact/>}/>
       </Routes>
     </BrowserRouter>
