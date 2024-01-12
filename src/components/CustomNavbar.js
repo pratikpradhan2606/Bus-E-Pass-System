@@ -32,7 +32,7 @@ function CustomNavbar() {
   
   const handleLogin = async (e) => {
       loginWithRedirect({
-        // Specify where to redirect after login
+        
         redirectUri: `${window.location.origin}/dashboard`, // Replace with your dashboard route
       });
   };
@@ -122,6 +122,7 @@ function CustomNavbar() {
 
           </div>
         </Collapse>
+        
       </Navbar>
     </div>
   );

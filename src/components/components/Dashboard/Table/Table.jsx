@@ -40,7 +40,7 @@ export default function BasicTable() {
     // Fetch user data when the component mounts
     async function fetchUserData() {
       try {
-        const response = await axios.get('http://localhost:8081/api/users/964566458140');
+        const response = await axios.get('http://localhost:8081/api/users/'+profileData.aadharNo);
         const userData = response.data; // Assuming response.data holds user data
         setProfileData(userData);
 

@@ -6,7 +6,11 @@ import About from './pages/About';
 import Services from './pages/Service';
 import DashboardApp from './components/components/Dashboard/App/DashboardApp.jsx'
 import Contact from './pages/Contact';
-function App() {
+import CourseCard from "./components/CourseCard";
+import {useEffect} from 'react';
+
+const App = () => {
+ 
   return (
     <BrowserRouter>
       <Routes>

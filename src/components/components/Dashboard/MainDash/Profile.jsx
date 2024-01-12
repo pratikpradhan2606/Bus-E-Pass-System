@@ -3,7 +3,8 @@ import React, { useState, useContext } from 'react';
 import { useEffect } from 'react'
 import { Button, Card, CardBody, CardHeader, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap'
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { UserContext} from '../App/DashboardApp.jsx';
 
 const Profile = () => {
@@ -17,14 +18,19 @@ const Profile = () => {
   }
   const submitForm = async (event) => {
     event.preventDefault()
-
+ 
+    
     try {
      
         // Send user profile data to your backend for registration
         console.log(profileData);
         const response = await axios.put('http://localhost:8081/api/users/'+profileData.aadharNo, profileData);
-        console.log('User data sent to backend:', response.data);
-
+        if(response.data){
+            console.log('User data sent to backend:', response.data);
+            toast.success("Profile Updated Successfully!", {
+              position: toast.POSITION.TOP_CENTER,
+          });
+        }
      
     } catch (error) {
       console.error('Error sending user data to backend:', error);
@@ -83,12 +89,23 @@ const Profile = () => {
                 onChange={(e) => handleChange(e, 'email')}
                 value={profileData.email}
               />
+              <span 
+              style=
+              {{
+                color:'red',
+                font:'small-caption',
+                fontWeight:'bold'
+              }}
+              >Non Editable</span>
             </FormGroup>
           </Col>
         </Row>
         
         <Button color='primary' type="submit">Update</Button>
       </Form>
+      <div className="toast-container">
+          <ToastContainer />
+        </div>
     </div>
   );
 };

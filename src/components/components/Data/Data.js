@@ -27,7 +27,7 @@ export const SidebarData = [
   },
   {
     icon:UilPackage,
-    heading:"Download Pass"
+    heading:"Your Pass"
   },
   
 
@@ -122,17 +122,37 @@ export const initialPassState = {
     state: '',
     zipCode: ''
   },
-  busPass: {
+  busPass: [{
     type: '',
     activatedOn: '',
     validity: '',
     status: '',
     renewalDate: '',
-    passId: ''
-  },
+    passId: '',
+    source:'',
+    destination:'',
+  }],
   paymentHistory: [{
     transactionId: '',
     amount: '',
     date: ''
   }],
 };
+export const PassData = 
+  {
+    title:"Daily",
+    charges:40,
+    color:{
+      backGround:"linear-gradient(180deg,#bb67ff 0%,#c484f3 100%)",
+      boxShadow:"0px 10px 20px 0px #e0c6f5",
+    },
+    barValue:70,
+    value:"1 Day Pass",
+    png:UilUsdSquare,
+    series:[
+      {
+        name:"Sales",
+        data:[31,40,28,51,42,108,100],
+      }
+    ],
+  }

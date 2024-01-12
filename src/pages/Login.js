@@ -1,57 +1,53 @@
-import React from 'react'
-import Base from '../components/Base'
-import { Button, Card, CardBody, CardHeader, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap'
+import React, { useState, useEffect } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import axios from 'axios';
 
 const Login = () => {
+  const { loginWithRedirect, user, isAuthenticated } = useAuth0();
+  const [aadharId, setAadharId] = useState('');
+  const [aadharIdFilled, setAadharIdFilled] = useState(false);
+
+  useEffect(() => {
+    // Check if the user has an Aadhar ID
+    if (isAuthenticated && user && user.email_verified && user.aadharId) {
+      setAadharIdFilled(true);
+    }
+  }, [isAuthenticated, user]);
+
+  const handleLogin = async (e) => {
+    loginWithRedirect({
+      redirectUri: `${window.location.origin}/dashboard`, // Replace with your dashboard route
+    });
+  };
+
+  const handleAadharIdSubmit = async (e) => {
+    e.preventDefault();
+    // Save Aadhar ID to the backend
+    try {
+      await axios.post('YOUR_BACKEND_API_URL', { aadharId });
+      setAadharIdFilled(true);
+    } catch (error) {
+      console.error('Error saving Aadhar ID:', error);
+    }
+  };
+
   return (
-    <Base>
-        <Container>
-            <Row className='mt-4'>
-                <Col sm={
-                    {
-                        size:6,
-                        offset:3
-                    }
-                }>
-                        <Card color='dark' inverse>
-                            <CardHeader>
-                                <h3>Login Here !!</h3>
-                            </CardHeader>
-                            <CardBody>
-                                <Form>
-                                    <FormGroup>
-                                        <Label 
-                                        for="email"
+    <div>
+      {isAuthenticated && !aadharIdFilled ? (
+        // Render Aadhar ID input form
+        <form onSubmit={handleAadharIdSubmit}>
+          <label>
+            Aadhar ID:
+            <input type="text" value={aadharId} onChange={(e) => setAadharId(e.target.value)} />
+          </label>
+          <button type="submit">Submit Aadhar ID</button>
+        </form>
+      ) : (
+        // Render login button
+        <button onClick={handleLogin}>Login</button>
+      )}
+    </div>
+  );
+};
 
-                                        >Enter Email</Label>
-                                    <Input
-                                     type="email"
-                                     id="email" />
-                                    </FormGroup>
-                                    {/* Password*/}
-                                    <FormGroup>
-                                        <Label 
-                                        for="password"
-
-                                        >Enter Password</Label>
-                                    <Input
-                                     type="password"
-                                     id="password" />
-                                    </FormGroup>
-                                    <Container className='text-center'>
-                                        <Button color='primary'>Login</Button>
-                                        <Button color='secondary' className='ms-2' type='reset'>Reset</Button>
-                                    </Container>
-                                </Form>
-                            </CardBody>
-                        </Card>
-
-                </Col>
-            </Row>
-
-        </Container>
-    </Base>
-  )
-}
-
-export default Login
+export default Login;

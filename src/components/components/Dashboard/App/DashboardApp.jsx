@@ -20,7 +20,7 @@ function DashboardApp() {
       async function fetchUserData() {
         try {
           const initialPassState1 = {
-            aadharNo: 9988,
+            aadharNo: 2323,
             name: user.nickname,
             mobileNo: '',
             email: user.email,
@@ -49,7 +49,7 @@ function DashboardApp() {
               const response2 = await axios.post('http://localhost:8081/api/users/',initialPassState1);
               const userData = response2.data;
               setProfileData(userData);
-          
+              
         } catch (error) {
           console.error('Error fetching user data:', error);
         }
@@ -66,8 +66,7 @@ function DashboardApp() {
 
          <Sidebar setSelectedTab={setSelectedTab} selectedTab={selectedTab}/>
           <MainDash selectedTab={selectedTab}/>
-          <RightSide/>
-
+          
          </UserContext.Provider>
         </div>
     </div>

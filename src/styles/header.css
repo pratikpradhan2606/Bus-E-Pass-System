@@ -1,9 +1,9 @@
-.header-color{
+.header-color-home{
     color:rgb(0, 0, 0);
     background-color: rgba(255, 255, 255, 0.799);
     font-size: large;
 }
-.heading{
+.heading-home{
     font-weight: 600;
     color: rgba(64, 70, 240, 0.858);
 }

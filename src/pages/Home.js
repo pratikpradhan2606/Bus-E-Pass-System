@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+
 import { Button, Card, CardBody, Col, Container, Row } from "reactstrap";
 import Base from "../components/Base";
 import register from '../assets/images/homepage_image.jpg'
-
+import React, { useState, useContext, useEffect } from 'react';
+import axios from 'axios';
 const Home = () => {
   const [backgroundColor, setBackgroundColor] = useState("blue");
   const colors = ["blue", "purple", "green"];
@@ -21,7 +22,7 @@ const Home = () => {
   return (
     <Base>
       <Container>
-        <div className="heading mt-3">
+        <div className="heading-home mt-3">
           <h3>E-Bus Pass</h3>
         </div>
         <Row className="mt-3">
@@ -43,7 +44,7 @@ const Home = () => {
                     <h5>Explore E-pass System</h5>
                     <p>E pass system is the web application system is going to develope to generate E passes
  digitally by adding necessary information and documents to generate pass.</p>
-                    <button className="search">Search</button>
+                    <button className="search" >Search</button>
                 </Col>
             </Row>
           </Col>
