@@ -6,18 +6,20 @@ import About from './pages/About';
 import Services from './pages/Service';
 import Dashboard from './pages/Dashboard';
 import Contact from './pages/Contact';
+
+
 function App() {
   return (
+    
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
-        <Route path='/services' element={<Services/>}/>
         <Route path='/contact' element={<Contact/>}/>
       </Routes>
+      
     </BrowserRouter>
-
   );
 }
 

@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardBody, Col, Container, Row } from "reactstrap";
+import { Button, Card, CardBody, Col, Container, Row } from "reactstrap";
 import Base from "../components/Base";
-
 import register from '../assets/images/homepage_image.jpg'
+import Background from "../assets/images/background.jpg";
+import "./Home.css";
+
+
+
 
 const Home = () => {
   const [backgroundColor, setBackgroundColor] = useState("blue");
   const colors = ["blue", "purple", "green"];
   const colorIndex = colors.indexOf(backgroundColor);
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setBackgroundColor(colors[(colorIndex + 1) % colors.length]);
@@ -22,42 +26,65 @@ const Home = () => {
   return (
     <Base>
       <Container>
-        <div className="heading mt-3">
-          <h3>E-Bus Pass</h3>
-        </div>
+      <div style={{ Background: `url(${Background})` }}>
+    
+        
         <Row className="mt-3">
           <Col md="7">
             <Row>
-            <Card style={{ backgroundColor: backgroundColor }}>
+            <Card className="card1">
               <CardBody className="p-4"
               style={{ color: "white" }}>
                 <h1>Travel Easily with E-Pass</h1>
                 <p>
-                  Get assured safety environment & practices along safety
-                  guidelines. choose from a wide selection and ensure safety
+                "Streamlined Travel, Instant E-pass: Where Convenience Meets Security."<br></br>
+                In a world that constantly evolves, so do our transportation systems. Introducing our cutting-edge E-Pass Bus System – a revolutionary digital solution designed to enhance your commuting experience.<br></br>
+
+
                 </p>
               </CardBody>
             </Card>
+
+            <Card className="card2">
+              <CardBody className="p-4"
+              style={{ color: "white" }}>
+                <h1>Vision</h1>
+                <p>
+                To transform the landscape of public transportation by providing a state-of-the-art E-Pass system that brings efficiency, accessibility, and security to the daily commute. We are dedicated to enhancing the overall commuter experience, promoting sustainable transportation practices, and contributing to the development of smart cities.<br>
+</br>
+Key Pillars of our Vision:<br>
+</br>
+Efficiency and Convenience<br></br>
+Enhanced Security and Data Privacy<br></br>
+Digital Innovation
+
+
+
+                </p>
+              </CardBody>
+            </Card>
+
+
+            <Card className="card3">
+              <CardBody className="p-4"
+              style={{ color: "white" }}>
+                <h1>Mission</h1>
+                <p>
+                To transform the landscape of public transportation by providing a state-of-the-art E-Pass system that brings efficiency, accessibility, and security to the daily commute. We are dedicated to enhancing the overall commuter experience, promoting sustainable transportation practices, and contributing to the development of smart cities.
+                </p>
+              </CardBody>
+            </Card>
+    
             </Row>
-            <Row className="mt-4">
-                <Col md="12">
-                    <h5>Explore E-pass System</h5>
-                    <p>E pass system is the web application system is going to develope to generate E passes
- digitally by adding necessary information and documents to generate pass.</p>
-                    <button className="search">Search</button>
-                </Col>
-            </Row>
+           
+           
           </Col>
-          <Col className="mt-5 col-lg-3 col-sm-1">
-                    <img
-                    src={register}
-                    alt="Registration Image"  
-                    style={{ width: '180%', height: 'auto' }}
-                    />
-        </Col>
+         
         </Row>
-       
+        </div>
+        
       </Container>
+      
     </Base>
     
   );

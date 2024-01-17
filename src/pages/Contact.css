@@ -7,7 +7,11 @@
     place-items: center;
 }
 .col-md-3 {
-  background: #ff9b00;
+    background-color: rgba(250, 165, 199, 0.7) !important; /* Set background color to transparent black */
+    box-shadow: none; /* Remove box shadow */    box-shadow: none; /* Remove box shadow */
+    box-shadow: 0 4px 6px rgba(179, 160, 160, 0.1); /* Add a box shadow for a subtle effect */
+    backdrop-filter: blur(100%); /* Apply a blur effect to the background */
+  background: #eedfca;
   padding: 4%;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;

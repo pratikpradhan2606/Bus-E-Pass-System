@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink as ReactLink } from 'react-router-dom';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo1.png';
+
+import axios from 'axios';
 import { useAuth0 } from "@auth0/auth0-react";
 import {
   Navbar,
@@ -17,14 +19,32 @@ import '../styles/header.css';
 function CustomNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+  
+  const [userProfile, setUserProfile] = useState({
+    id:'',
+    name: '', // User's Full Name
+    email: '', // User's Email
+    password:'',
+    about:''
+  });
+  
 
   const toggle = () => setIsOpen(!isOpen);
+  
+  const handleLogin = async (e) => {
+      loginWithRedirect({
+        
+        redirectUri: `${window.location.origin}/dashboard`, // Replace with your dashboard route
+      });
+  };
 
   const activeStyle = {
     color: 'blue',
   };
+
   return (
     <div>
+      
       <Navbar className='header-color' light expand="md">
         <NavbarBrand tag={ReactLink} to="/">
           <img src={logo} alt="E-Pass" width="100" height="auto" />
@@ -41,22 +61,12 @@ function CustomNavbar() {
                   activeClassName="active-link"
                   style={window.location.pathname === '/' ? activeStyle : {}}
                 >
-                  Home
+                  <b>Home</b>
+                  
                 </NavLink>
               </NavItem>
             </div>
-            <div className='custom-button'>
-              <NavItem>
-                <NavLink
-                  tag={ReactLink}
-                  to="/services"
-                  activeClassName="active-link"
-                  style={window.location.pathname === '/services' ? activeStyle : {}}
-                >
-                  Services
-                </NavLink>
-              </NavItem>
-            </div>
+            
             <div className='custom-button'>
               <NavItem>
                 <NavLink
@@ -65,11 +75,11 @@ function CustomNavbar() {
                   activeClassName="active-link"
                   style={window.location.pathname === '/about' ? activeStyle : {}}
                 >
-                  About
+                  <b>About</b>
                 </NavLink>
               </NavItem>
             </div>
-
+            
             <div className='custom-button'>
               <NavItem>
                 <NavLink
@@ -78,15 +88,27 @@ function CustomNavbar() {
                   activeClassName="active-link"
                   style={window.location.pathname === '/contact' ? activeStyle : {}}
                 >
-                  Contact
+                                    <b>Contact</b>
+
                 </NavLink>
               </NavItem>
             </div>
+            {isAuthenticated && <div className='custom-button'>
+              <NavItem>
+                <NavLink
+                  tag={ReactLink}
+                  to="/dashboard"
+                  activeClassName="active-link"
+                  style={window.location.pathname === '/dashboard' ? activeStyle : {}}
+                >
+                  Dashboard
+                </NavLink>
+              </NavItem>
+            </div>
+            }
           </Nav>
           <div>
-            {
-              isAuthenticated && <p>{user.address}</p>
-            }
+            
           </div>
           <div >
             {
@@ -96,14 +118,15 @@ function CustomNavbar() {
                   Log Out
                 </Button>
               ) : (
-                <Button color="primary" onClick={() => loginWithRedirect()}>
-                  Log In
+                <Button color="primary" onClick={handleLogin}>
+                  <b>LogIn</b>
                 </Button>
               )
             }
 
           </div>
         </Collapse>
+        
       </Navbar>
     </div>
   );

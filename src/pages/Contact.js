@@ -5,11 +5,12 @@ import emailjs from "@emailjs/browser";
 import "./Contact.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Base from "../components/Base";
 
 const Contact = () => {
   const form = useRef();
 
-  const notify = () => toast("Wow so easy!");
+  const notify = () => toast("Submitted Successfully!");
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -122,3 +123,4 @@ const Contact = () => {
 };
 
 export default Contact;
+ 

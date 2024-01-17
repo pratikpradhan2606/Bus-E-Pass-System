@@ -14,7 +14,7 @@ const About = () => {
             <section className="section-white">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12 text-center">
+                        <div className="col-md-12 text-centerln -s ../public/star-regular\ (1).svg ./src/pages/Images/star-regular (1).svg">
                             <h2 className="section-title">The Team Behind Pacifico</h2>
                         </div>
                         <div className="col-md-3">
@@ -22,7 +22,6 @@ const About = () => {
                                 <img src={Vikas} className="img-fluid team-img1" alt="pic" height={420} width={350} />
                                 <h3>Jaiswal Vikas</h3>
                                 <div className="team-info">
-                                    <p>(Frontend Developer)</p>
                                     <p>
                                         "At the forefront of our digital innovation, our talented frontend developers craft seamless and engaging user experiences, transforming vision into reality through the artful implementation of cutting-edge technologies and design principles."              </p>
 
@@ -34,7 +33,6 @@ const About = () => {
                                 <img src={Sakshi} className="img-fluid team-img2" alt="pic" />
                                 <h3>Kale Sakshi</h3>
                                 <div className="team-info">
-                                    <p>(Backend Developer)</p>
                                     <p>
                                         "At the heart of our digital infrastructure, our dedicated backend developers drive the engine of our projects, engineering scalable and secure server-side solutions to seamlessly handle data, optimize performance, and ensure the reliability and efficiency of our systems."              </p>
 
@@ -46,7 +44,6 @@ const About = () => {
                                 <img src={Vaishnavi} className="img-fluid team-img3" alt="pic" height={420} width={350} />
                                 <h3>Takale Vaishnavi</h3>
                                 <div className="team-info">
-                                    <p>(UI/UX Designer)</p>
                                     <p>
                                         "At the intersection of aesthetics and functionality, our talented UI/UX designers bring visions to life, meticulously crafting visually stunning and intuitively designed interfaces that elevate user experiences, making every interaction with our projects a delightful journey."
                                     </p>
@@ -59,7 +56,6 @@ const About = () => {
                                 <img src={Shubhangi} className="img-fluid team-img" alt="pic"  />
                                 <h3>Tambade Shubhangi</h3>
                                 <div className="team-info">
-                                    <p>(Database Handler)</p>
                                     <p>
                                         "At the core of our data-driven success, our adept database handlers meticulously manage and organize the lifeblood of our projects, ensuring seamless data storage, retrieval, and optimization, fostering reliability and efficiency in every aspect of our digital ecosystem."
                                     </p>
