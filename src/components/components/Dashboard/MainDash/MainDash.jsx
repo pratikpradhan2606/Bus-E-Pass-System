@@ -1,17 +1,18 @@
 // MainDash.jsx
 import React, { useContext, useEffect, useState } from 'react';
 import './MainDash.css';
-import { UserContext } from '../App/DashboardApp.jsx'
+import { UserContext } from '../App/DashboardApp.jsx';
 import Cards from '../Cards/Cards.jsx';
 import PaymentHistory from './PaymentHistory.jsx';
 import Profile from './Profile.jsx';
 import DownloadPass from './DownloadPass.jsx';
 import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
-import { Button } from 'reactstrap';
+import { Button, Row, Col } from 'reactstrap';
+import html2canvas from 'html2canvas';
 const MainDash = ({ selectedTab }) => {
   const { user, isAuthenticated } = useAuth0();
-  const { profileData, setProfileData } = useContext(UserContext); // Access profileData from context
+  const { profileData, setProfileData } = useContext(UserContext);
   const [showPass, setShowPass] = useState(false);
   const [activePass, setActivePass] = useState({
     type: '',
@@ -20,19 +21,17 @@ const MainDash = ({ selectedTab }) => {
     status: '',
     renewalDate: '',
     passId: '',
-    source:'',
-    destination:''
-  })
+    source: '',
+    destination: '',
+  });
+
   useEffect(() => {
-    // Fetch user data only if the user is authenticated
     const fetchUserData = async () => {
       if (isAuthenticated) {
-
         try {
           const response2 = await axios.get('http://localhost:8081/api/users/' + profileData.aadharNo);
           const userData = response2.data;
           setProfileData(userData);
-
         } catch (error) {
           console.error('Error fetching user data:', error);
         }
@@ -40,68 +39,100 @@ const MainDash = ({ selectedTab }) => {
 
       fetchUserData();
       myPass();
-    }
+    };
   }, [isAuthenticated, user]);
+
+  const handleDownload = async () => {
+    try {
+      const modalContent = document.getElementById('modal-content');
+
+      // Capture modal content
+      const contentCanvas = await html2canvas(modalContent);
+
+      // Convert the canvas to a data URL
+      const dataUrl = contentCanvas.toDataURL('image/png');
+
+      // Create a temporary link element
+      const link = document.createElement('a');
+      link.href = dataUrl;
+      link.download = 'download.png'; // Specify the desired file name
+
+      // Simulate a click on the link to trigger the download
+      document.body.appendChild(link);
+      link.click();
+
+      // Remove the link from the DOM
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error downloading image:', error);
+    }
+  };
 
   const myPass = async () => {
     try {
       const response = await axios.get('http://localhost:8081/api/users/passes/current/' + profileData.aadharNo);
       const currentDatePasses = response.data;
+
+      if (currentDatePasses === '') {
+        alert("You don't have an active Pass");
+        return;
+      }
       setActivePass(currentDatePasses);
       setShowPass(true);
-      // Process the current date passes as needed
-     // alert(JSON.stringify(currentDatePasses));
     } catch (error) {
       console.error('Error fetching current date passes:', error);
     }
-  }
+  };
+
   const handleCloseModal = () => {
     setShowPass(false);
   };
+
   return (
     <div>
       <div className="heading">
-        <h1>Dashboard</h1>
-
+        <h2>Dashboard</h2>
       </div>
-      <div className="user">
-        Welcome {isAuthenticated && profileData.name}
-      </div>
+      
+      <hr />
       {selectedTab === 0 && (
         <>
+          
+          <div className="heading-dashboad">
+              <h4>Your Journey, Your Bus Pass – Choose Wisely</h4>
+          </div>
           <Cards />
-
-          {isAuthenticated && profileData.passId &&
-            <p>You have not selected any pass as of now</p>
-
-          }
-
-          <Button onClick={myPass}>Show Current Pass</Button>
+          <br />
+          <div className="centered-card">
+            <p>Click on Below Show Current Pass to see your Current Pass</p>
+            <span style={{ color: "green", marginBottom:"2%" }}>
+              <li>If you have a pass, it will show you the option to download</li>
+            </span>
+            <Button onClick={myPass}>Show Current Pass</Button>
+          </div>
           <div className="myPass">
-            {showPass && activePass.passId!='' && (
+            {showPass && activePass.passId !== '' && (
               <div className="modal-overlay" style={{ display: showPass ? 'flex' : 'none' }}>
-                <div className="modal-content">
+                <div className="modal-content" id="modal-content">
                   <div className="aadhar-card">
-                    <img className="modal-photo" src={user.picture} alt="User" />
+                    <img className="modal-photo" id="modal-photo" src={user.picture} alt="User" />
                     <div className="aadhar-details">
                       <div>
                         <strong>Aadhar Number:</strong> {profileData.aadharNo}
                       </div>
-                      
                     </div>
                     <div className="aadhar-details">
-                    <div>
+                      <div>
                         <strong>Name:</strong> {profileData.name}
                       </div>
-                     
                     </div>
                     <div className="aadhar-details">
-                    <div>
+                      <div>
                         <strong>Email:</strong> {profileData.email}
                       </div>
                     </div>
                     <div className="aadhar-details">
-                    <div>
+                      <div>
                         <strong>Mobile No:</strong> {profileData.mobileNo}
                       </div>
                     </div>
@@ -111,20 +142,23 @@ const MainDash = ({ selectedTab }) => {
                       </div>
                     </div>
                     <div className="aadhar-details">
-                    <div>
-                      <strong>Pass Route : {activePass.source} - {activePass.destination} </strong>
+                      <div>
+                        <strong>Pass Route: {activePass.source} - {activePass.destination}</strong>
+                      </div>
                     </div>
-
+                    <Row className="justify-content-between">
+                      <Col>
+                        <Button onClick={handleCloseModal}>Close</Button>
+                      </Col>
+                      <Col>
+                        <Button onClick={handleDownload}>Download</Button>
+                      </Col>
+                    </Row>
                   </div>
-                  </div>
-                 
-                  <Button onClick={handleCloseModal}>Close</Button>
                 </div>
-              </div>)}
-
+              </div>
+            )}
           </div>
-
-
         </>
       )}
       {selectedTab === 1 && <Profile />}

@@ -47,7 +47,7 @@ function ExpandedCard({ param, setExpanded }) {
         type:param.title,
         info: 'order_request'
       };
-      alert(data1);
+      //alert(data1);
       const result = await axios.post("http://localhost:8081/create_order", data1);
       if (!result) {
           alert("Server error. Are you online?");
@@ -72,7 +72,7 @@ function ExpandedCard({ param, setExpanded }) {
                   razorpayOrderId: response.razorpay_order_id,
                   razorpaySignature: response.razorpay_signature,
               };
-             alert(JSON.stringify(data));
+             //alert(JSON.stringify(data));
               const result = await axios.post("http://localhost:8081/payment/success/"+profileData.aadharNo, {
                 transactionId:order_id,
                 passType:passType,
@@ -89,12 +89,14 @@ function ExpandedCard({ param, setExpanded }) {
                 "validity": "",
                 "status": "active",
                 "renewalDate": "",
-                "passId": "1234"
+                "passId": "1234",
+                "source": source,
+                "destination":destination
               }
-              alert("Success "+JSON.stringify(result.data));
+              //alert("Success "+JSON.stringify(result.data));
               const response1 = await axios.post("http://localhost:8081/api/users/pass/"+profileData.aadharNo,data2);
               if(response1.data){
-                alert("Pass Generated");
+                alert("Pass Generated Successfully");
               }
           },
           prefill: {
@@ -117,7 +119,7 @@ function ExpandedCard({ param, setExpanded }) {
   
   const checkPassAlreadyExist = async() =>{
     try {
-      if (selectedDate === '') {
+      if (selectedDate === '' || source == '' || destination=='') {
         alert("Please Fill Complete Details");
         return;
       }
@@ -136,11 +138,11 @@ function ExpandedCard({ param, setExpanded }) {
       let res = await axios.post("http://localhost:8081/api/users/pass/conflict/"+profileData.aadharNo,data)
       
       if(res.data===404){
-        alert("Pass Already Exists Try again!!");
+        alert("Pass Already Exists for Same Date Try again!!");
         return;
       }
       
-      alert("No Conflict");
+      //alert("No Conflict");
       
       console.log(JSON.stringify(data));
 
@@ -194,12 +196,14 @@ function ExpandedCard({ param, setExpanded }) {
           label="Source"
           value={source}
           onChange={(e) => setSource(e.target.value)}
+          required
         />
         {/* Destination input */}
         <TextField className='m-1'
           label="Destination"
           value={destination}
           onChange={(e) => setDestination(e.target.value)}
+          required
         />
       </div>
       {/* Amount input */}
@@ -220,8 +224,8 @@ function ExpandedCard({ param, setExpanded }) {
         required
       />
 
-      <Button onClick={checkPassAlreadyExist}>Get Pass</Button>
-      <span>Last 24 Hours</span>
+      <Button style={{color:"white", backgroundColor:"black"}} onClick={checkPassAlreadyExist}>Get Pass</Button>
+      <span>E-Pass</span>
       <div className="toast-container">
         <ToastContainer />
       </div>

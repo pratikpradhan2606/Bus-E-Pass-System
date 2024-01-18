@@ -59,7 +59,9 @@ const DownloadPass = () => {
             <TableHead>
               <TableRow>
                 <TableCell>ID</TableCell>
+                <TableCell align="right">Type</TableCell>
                 <TableCell align="right">Amount</TableCell>
+                
                 <TableCell align="right">Date</TableCell>
               </TableRow>
             </TableHead>
@@ -71,6 +73,7 @@ const DownloadPass = () => {
                       {pass.passId}
                     </TableCell>
                     <TableCell align="right">{pass.type}</TableCell>
+                    <TableCell align="right">{ pass.type==='Daily' ? 40 : pass.type === 'Monthly'? 1000 : 250 }</TableCell>
                     <TableCell align="right">{pass.activatedOn}</TableCell>
                   </TableRow>
                 ))

@@ -89,6 +89,7 @@ function CustomNavbar() {
                 </NavLink>
               </NavItem>
             </div>
+
             {isAuthenticated && <div className='custom-button'>
               <NavItem>
                 <NavLink
@@ -102,12 +103,15 @@ function CustomNavbar() {
               </NavItem>
             </div>
             }
+
+            
           </Nav>
           <div>
             
           </div>
           <div >
-            {
+            
+          {
               //check user is login or not
               isAuthenticated ? (
                 <Button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
@@ -119,8 +123,8 @@ function CustomNavbar() {
                 </Button>
               )
             }
-
           </div>
+         
         </Collapse>
         
       </Navbar>

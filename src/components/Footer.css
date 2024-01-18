@@ -1,30 +1,34 @@
-.footer-wrapper {
-    margin: 6rem 0rem;
-    display: flex;
-    margin-top: 10rem;
-  }
-  .footer-logo-container {
-    max-width: 10%;
+.bodycontainer{
+  background-color: rgba(48, 46, 47, 0.7) !important; /* Set background color to transparent black */
+  box-shadow: none; /* Remove box shadow */    box-shadow: none; /* Remove box shadow */
+  box-shadow: 0 4px 6px rgba(179, 160, 160, 0.1); /* Add a box shadow for a subtle effect */
+  backdrop-filter: blur(100%); /* Apply a blur effect to the background */ 
+}
+.text{
+  color: rgb(246, 238, 238);
+  font-weight: bold;
+  /* font-weight: 100; */
+}
+.black-text {
+  color: rgb(250, 245, 245);
+}
+.text-uppercase{
+  color: rgb(250, 245, 245);
+  font-weight: bold;
+}
+.text2{
+  color: rgb(250, 245, 245);
 
-  }
-  .footer-icons {
-    margin-top: 2.5rem;
-    align-items: center;
+}
+.email{
+  color: rgb(250, 245, 245);
 
-  }
-  .footer-icons svg {
-    font-size: 1.5rem;
-    margin-right: 1.25rem;
-    color: #585858;
-  }
-  .footer-section-two {
-   
-    display: flex;
-    justify-content: flex-end;
-  }
-  .footer-section-columns {
-    display: flex;
-    flex-direction: column;
-    min-width: 190px;
-  }
- 
+}
+.contact1{
+  color: rgb(250, 245, 245);
+
+}
+.contact2{
+  color: rgb(250, 245, 245);
+
+}

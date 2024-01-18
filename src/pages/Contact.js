@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import "./Contact.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Base from "../components/Base";
 
 const Contact = () => {
   const form = useRef();
@@ -32,6 +33,7 @@ const Contact = () => {
   };
 
   return (
+    <Base>
     <section>
       <div className="container contact">
         <form ref={form} onSubmit={sendEmail} className="form-control card-flex-center-dir-column">
@@ -118,6 +120,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </Base>
   );
 };
 

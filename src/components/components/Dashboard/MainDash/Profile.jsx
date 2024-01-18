@@ -78,6 +78,7 @@ const Profile = () => {
                 value={profileData.name}
               />
             </FormGroup>
+            
           </Col>
           <Col md={6}>
             <FormGroup>
@@ -88,6 +89,7 @@ const Profile = () => {
                 id="email"
                 onChange={(e) => handleChange(e, 'email')}
                 value={profileData.email}
+                readOnly={profileData.email ? true : false}
               />
               <span 
               style=
@@ -97,7 +99,19 @@ const Profile = () => {
                 fontWeight:'bold'
               }}
               >Non Editable</span>
+              
             </FormGroup>
+            <FormGroup>
+              <Label for="number" >Enter MobileNo</Label>
+              <Input
+                type="number"
+                placeholder='Enter MobileNo'
+                id="number"
+                onChange={(e) => handleChange(e, 'mobileNo')}
+                value={profileData.mobileNo}
+              />
+            </FormGroup>
+             
           </Col>
         </Row>
         

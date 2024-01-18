@@ -4,8 +4,11 @@ import Base from "../components/Base";
 import register from '../assets/images/homepage_image.jpg'
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+import { useAuth0 } from "@auth0/auth0-react";
+import DashboardApp from "../components/components/Dashboard/App/DashboardApp";
 const Home = () => {
   const [backgroundColor, setBackgroundColor] = useState("blue");
+  const {loginWithRedirect, isAuthenticated } = useAuth0();
   const colors = ["blue", "purple", "green"];
   const colorIndex = colors.indexOf(backgroundColor);
   
@@ -19,6 +22,17 @@ const Home = () => {
     };
   }, [colorIndex, backgroundColor]);
 
+  
+  const showDashboard = () => {
+    const dashboardUrl = `${window.location.origin}/dashboard`; // Update with your dashboard route
+    window.location.href = dashboardUrl;
+  };
+  const loginUser = () =>{
+    loginWithRedirect({
+        
+      redirectUri: `${window.location.origin}/dashboard`, // Replace with your dashboard route
+    });
+  }
   return (
     <Base>
       <Container>
@@ -44,7 +58,11 @@ const Home = () => {
                     <h5>Explore E-pass System</h5>
                     <p>E pass system is the web application system is going to develope to generate E passes
  digitally by adding necessary information and documents to generate pass.</p>
-                    <button className="search" >Search</button>
+                   
+                    <button className="search" onClick={()=>{
+                      isAuthenticated ? showDashboard() : loginUser()
+                    }}>{isAuthenticated ? "Dashboard" : "Register / Login"}</button>
+                    
                 </Col>
             </Row>
           </Col>

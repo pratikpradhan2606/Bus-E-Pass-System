@@ -1,28 +1,25 @@
-import React from 'react'
-import { UpdatesData } from '../../Data/Data'
-import './Updates.css'
+import React from 'react';
+import { UpdatesData } from '../../Data/Data';
+import './Updates.css';
+import { Button } from 'reactstrap';
+
 const Updates = () => {
   return (
-    <div className="Updates">
-        {UpdatesData.map((update)=>{
-            return (
-                <div className="update">
-                    <img src={update.img} alt="" />
-                    <div className="noti">
-                        <div style={{marginBottom:'0.5rem'}}>
-                            <span>{update.name}</span>
-                            <span>{update.noti}</span>    
-                        </div>
-                    </div>
-                    
-                        <span>{update.time}</span>
-                    
-                </div>
-            )
-            })
-        }
+    <>
+            
+    <div className="marquee-container">
+    <center><h2>News Feed</h2>
+    </center>
+      <marquee direction="up" scrollamount="5"  className="marquee">
+        {UpdatesData.map((update, index) => (
+          <div key={index} className="marquee-item" style={{color:"red"}}>
+            {update.heading}
+          </div>
+        ))}
+      </marquee>
     </div>
-  )
-}
+    </>
+  );
+};
 
-export default Updates
+export default Updates;

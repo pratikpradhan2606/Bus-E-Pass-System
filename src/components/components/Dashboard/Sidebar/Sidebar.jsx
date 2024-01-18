@@ -22,7 +22,7 @@ const Sidebar = ({ setSelectedTab }) => {
             <div className="menu">
                 {SidebarData.map((item, index) => {
                     return (
-                        <div className={selected === index ? 'menuItem active' : 'menuItem'}
+                        <div className={selected === index ? 'menuItem activeTab' : 'menuItem'}
                         key={index} onClick={() => {
                             setSelectedTab(index)
                             setSelected(index);
@@ -38,7 +38,9 @@ const Sidebar = ({ setSelectedTab }) => {
                 <div className="menuItem">
                     <UilSignOutAlt
                     onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+
                     />
+                    
                 </div>
             </div>
         </div>
