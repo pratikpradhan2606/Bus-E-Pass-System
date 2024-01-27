@@ -1,0 +1,36 @@
+.bodycontainer{
+  background-color: black;
+  box-shadow: none; /* Remove box shadow */    box-shadow: none; /* Remove box shadow */
+  box-shadow: 0 4px 6px rgba(179, 160, 160, 0.1); /* Add a box shadow for a subtle effect */
+  backdrop-filter: blur(100%); /* Apply a blur effect to the background */ 
+}
+.text{
+  color: rgb(246, 238, 238);
+  font-weight: bold;
+  /* font-weight: 100; */
+}
+.black-text {
+  color: rgb(250, 245, 245);
+}
+.text-uppercase{
+  color: rgb(250, 245, 245);
+  font-weight: bold;
+}
+.text2{
+  color: rgb(250, 245, 245);
+
+}
+.email{
+  color: rgb(250, 245, 245);
+
+}
+.contact1{
+  color: rgb(250, 245, 245);
+
+}
+.contact2{
+  color: rgb(250, 245, 245);
+
+}
+
+

@@ -1,0 +1,112 @@
+/* .header-color{
+    color:rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.799);
+    font-size: large;
+}
+.heading{
+    font-weight: 600;
+    color: rgba(64, 70, 240, 0.858);
+}
+.search {
+    border: 0px;
+    outline: 0px;
+    background-color: rgb(255, 109, 56);
+    height: 4rem;
+    width: 20rem;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3rem;
+    color: white;
+    font-size: 1.9rem;
+    font-family: Quicksand;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 0.2rem 1.2rem 0px;
+}
+.custom-button{
+    line-height: normal;
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 88px;
+    border-radius: 20px;
+    width: 88px;
+    height: 34px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid transparent;
+    padding: 0px;
+    margin:5px;
+    border-color: darkgrey;
+}
+.active-link {
+    border-color: blue; 
+    font-size: xx-large;
+  }
+  
+.footer-color{
+    color:white;
+    background-color: rgb(0, 0, 0);
+} */
+
+
+
+
+
+/* styles/header.css */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+
+}
+body{
+    background: url(/src/assets/images/Home.jpg) no-repeat;
+    height: 100vh;
+    background-size: cover;
+    opacity: 10;
+    background-position: center;
+}
+
+.header-color {
+    background-color: rgba(186, 175, 175, 0.7) !important; /* Set background color to transparent black */
+    box-shadow: none; /* Remove box shadow */    box-shadow: none; /* Remove box shadow */
+    box-shadow: 0 4px 6px rgba(179, 160, 160, 0.1); /* Add a box shadow for a subtle effect */
+    backdrop-filter: blur(100%); /* Apply a blur effect to the background */
+    
+  }
+  
+  .custom-button {
+    margin-right: 10px; /* Add some spacing between buttons */
+    display: inline-block;
+    list-style: none;
+    padding: 0px 20px;
+  }
+  
+  .active-link {
+    color: rgb(246, 176, 215); /* Define the color for active links */
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(245, 238, 238);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Optional: Customize the appearance of the login/logout button */
+  .button-container {
+    margin-left: 10px; /* Add some spacing to the left of the button */
+  }
+  
+  /* Optional: Customize the appearance of the logo */
+  .custom-logo {
+    /* Add any additional styling for the logo if needed */
+  }
+

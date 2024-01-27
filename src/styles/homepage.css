@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .card1,
+  .card2,
+  .card3 {
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    background-color: rgba(176, 173, 174, 0.7) !important; /* Set background color to transparent black */
+    box-shadow: #fff; /* Remove box shadow */  
+    box-shadow: 0 4px 6px rgba(12, 12, 12, 0.1); /* Add a box shadow for a subtle effect */
+    backdrop-filter: blur(100%); /* Apply a blur effect to the background */
+  }
+  
+  .card1:hover,
+  .card2:hover,
+  .card3:hover {
+    transform: scale(1.05) perspective(2000px) rotateY(40deg); /* Adjust the perspective and rotation values as needed */
+    background-color: #7e25a7; /* Adjust the color as needed */
+
+  }
+  
+  .card__name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .card__parr {
+    margin-bottom: 20px;
+  }
+  
+  .link__card {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #a0dfa2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  .link__card:hover {
+    background-color: #2e7d32;
+  }
+  
