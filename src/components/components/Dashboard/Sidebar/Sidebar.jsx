@@ -8,14 +8,16 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Sidebar = ({ setSelectedTab }) => {
     const [selected, setSelected] = useState(0);
     const { logout, user, isAuthenticated } = useAuth0();
+    
 
     return (
         <div className="Sidebar">
             {/* logo*/}
+            
             <div className="logo">
                 <img src={logo} alt="" />
                 <span>
-                    E-<span>pass</span>
+                    E-Pass
                 </span>
             </div>
             {/* Menu */}

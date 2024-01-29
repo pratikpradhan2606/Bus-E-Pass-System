@@ -7,7 +7,7 @@ import "./Footer.css";
 
 const FooterComponent = () => {
   return (
-    <footer className="bodycontainer" >
+    <footer className="bodycontainer">
       <div>
         <div className="container my-5">
           <footer className="text-center text-lg-start text-white">
@@ -53,6 +53,7 @@ const FooterComponent = () => {
                   </p>
                 </div>
 
+
                 <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                   <h6 className="text-uppercase mb-4 font-weight-bold">
                     Contact
@@ -75,7 +76,7 @@ const FooterComponent = () => {
               <hr className="my-3"></hr>
 
               <section className="footerend d-flex justify-content-between align-items-center flex-wrap">
-                <div className="col-md-7 col-lg-8 text-center text-md-start">
+                <div className="col-md-12 col-lg-8 text-center text-md-start">
                   <div className="p-3">
                     © 2024 Copyright:
                     <a className="text-white" href="http://localhost:3000/">
@@ -84,7 +85,7 @@ const FooterComponent = () => {
                   </div>
                 </div>
 
-                <div className="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                <div className="col-md-12 col-lg-4 ml-lg-0 text-center text-md-end">
                   <a
                     href="https://twitter.com/EPass328601"
                     className="btn btn-outline-light btn-floating m-1 text-white"

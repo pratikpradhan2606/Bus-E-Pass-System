@@ -76,19 +76,35 @@ team-info{
     padding: 6px 6px;
     background-color: #dedede;
     
-}
-/*
-.team-img1{
-   border-radius: 90%;
-}
-
-.team-img2{
-    border-radius: 90%;
- }
- .team-img3{
-    border-radius: 90%;
- }
- .team-img4{
-    border-radius: 90%;
- }
- */
+}.team-item {
+    position: relative;
+    text-align: center;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .team-item:hover {
+    box-shadow: 0 0 15px rgba(255, 223, 0, 0.9); /* Golden color: RGB(255, 223, 0) */
+  }
+  
+  .team-img1 {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .team-info {
+    margin-top: 20px;
+  }
+  
+  /* Optional: Add some styles to the heading and paragraph */
+  .team-item h3 {
+    color: #333; /* Adjust the text color as needed */
+  }
+  
+  .team-info p {
+    color: #666; /* Adjust the text color as needed */
+  }
+  

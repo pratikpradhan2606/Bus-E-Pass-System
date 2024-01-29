@@ -4,6 +4,41 @@
     align-items: center;
     padding: 20px;
   }
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .card1,
+  .card2,
+  .card3 {
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    transition: box-shadow 0.3s ease-in-out;
+    margin: 10px;
+  }
+  
+  .card1:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+  }
+  
+  .card2 {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+  }
+  
+  .card2:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.9);
+  }
+  
+  .card3 {
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
+  }
+  
+  .card3:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.9);
+  }
+  
   
   .card1,
   .card2,

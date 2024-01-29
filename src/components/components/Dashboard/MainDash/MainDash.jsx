@@ -103,9 +103,9 @@ const MainDash = ({ selectedTab }) => {
           </div>
           <Cards />
           <br />
-          <div className="centered-card">
+          <div className="centered-card glowing-border">
             <p>Click on Below Show Current Pass to see your Current Pass</p>
-            <span style={{ color: "green", marginBottom:"2%" }}>
+            <span style={{ color: "white", marginBottom:"2%" }}>
               <li>If you have a pass, it will show you the option to download</li>
             </span>
             <Button onClick={myPass}>Show Current Pass</Button>

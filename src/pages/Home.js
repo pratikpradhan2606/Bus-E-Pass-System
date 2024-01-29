@@ -59,8 +59,10 @@ const Home = () => {
             <a href='/' className="link__card color__link__dark">Learn More</a>
           </div> */}
         </section>
+        
 
       </section>
+      
 
     </Base>
     

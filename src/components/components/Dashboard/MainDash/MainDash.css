@@ -4,9 +4,33 @@
     justify-content: space-evenly;
     
 }
+.heading-dashboad{
+
+color: #ccc;
+}
+.glowing-border {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 20px;
+  animation: glowing 2s infinite; /* Adjust the duration as needed */
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
+  }
+  50% {
+    box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
+  }
+  100% {
+    box-shadow: 0 0 5px #0000ff, 0 0 10px #0000ff, 0 0 20px #0000ff;
+  }
+}
+
 .heading{
     margin-top: 4%;
-    color:black;
+    color:rgb(244, 238, 238);
     display: flex;
 }
 .user{
@@ -86,7 +110,7 @@
 
 h4{
     justify-content: center;
-    color: #5e244b;
+    color: #f5eff3;
     padding-left: 1%;
 }
 
@@ -121,4 +145,7 @@ h4{
   100% {
     background-position: 400% 400%;
   }
+}
+.centered-card{
+  color: #f5eff3;
 }

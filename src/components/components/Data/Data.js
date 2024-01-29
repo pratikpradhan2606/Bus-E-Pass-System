@@ -92,20 +92,20 @@ export const CardsData = [
 export const UpdatesData = [
   
   {
-    heading:'1. Indefinite ‘steering chodo’ stir from today, transport services may be hit'
+    heading:'1. Explore news about the expansion of e-pass services to new regions or cities.'
   },
   {
-    heading:'2. HC: Bus damage no ground to claim relief for revenue loss '
+    heading:'2. Look for information on any technological advancements or updates in the e-pass bus system, such as the introduction of new apps or features. '
   },{
-    heading:'3. Now, MSRTC passengers can pay for ticket fares digitally during journey'
+    heading:'3. Check for news about partnerships between e-pass bus systems and other organizations, like technology companies, local governments, or transportation agencies.'
   },{
     heading:'Trade unions call off bus strike '
   },{
-    heading:'4. ST bus ploughs into 7 vehicles, hits median on Solapur Road '
+    heading:'4. Find out if there have been recent improvements in the user experience of the e-pass system, including ease of obtaining passes, real-time tracking, or customer support.'
   },{
     heading:'5. No cancellation of any bus service due e-ticket machine problem: MSRTC official '
   },{
-    heading:'6. 3 players in running to ply buses for Delhi govt’s premium services '
+    heading:'6. Explore news related to any promotions, discounts, or special offers provided by the e-pass bus system to encourage ridership. '
   },
   {
     heading:'7. Strike fizzles out as buses operated as per schedule'
