@@ -1,6 +1,6 @@
 .section-white{
     background-color: transparent;
-    padding: 70px 0;
+    
 }
 .col-md-3{
     background-color: rgba(233, 105, 105, 0);
@@ -8,8 +8,8 @@
 .team-item{
     background-color: #f4f5f6;
     text-align: center;
-    margin: 20px 0;
-    padding: 50px 20px 40px 20px;
+    padding: 20px;
+    
     border-radius: 8px 8px;
     -webkit-transition:all 0.25s ease-in-out;
     -moz-transition:all 0.25s ease-in-out ;

@@ -3,10 +3,27 @@
     justify-content: space-around;
     align-items: center;
     padding: 20px;
+    flex-wrap: wrap;
   }
-  .container {
-    display: flex;
-    justify-content: space-around;
+ 
+  
+  .card {
+    width: calc(33.33% - 20px); /* Adjust as needed */
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .card {
+      width: calc(50% - 20px); /* Adjust as needed */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .card {
+      width: 100%;
+    }
   }
   
   .card1,

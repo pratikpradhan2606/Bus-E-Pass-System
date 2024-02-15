@@ -6,6 +6,8 @@ import { FaFacebookF } from "react-icons/fa";
 import "./Footer.css";
 
 const FooterComponent = () => {
+
+  
   return (
     <footer className="bodycontainer">
       <div>
@@ -71,24 +73,17 @@ const FooterComponent = () => {
                     <i className="fas fa-print mr-3"></i> +918180032920
                   </p>
                 </div>
-              </section>
-
-              <hr className="my-3"></hr>
-
-              <section className="footerend d-flex justify-content-between align-items-center flex-wrap">
-                <div className="col-md-12 col-lg-8 text-center text-md-start">
-                  <div className="p-3">
+                <div className="p-3">
                     © 2024 Copyright:
                     <a className="text-white" href="http://localhost:3000/">
                       Epass.com
                     </a>
                   </div>
-                </div>
-
+                
                 <div className="col-md-12 col-lg-4 ml-lg-0 text-center text-md-end">
                   <a
                     href="https://twitter.com/EPass328601"
-                    className="btn btn-outline-light btn-floating m-1 text-white"
+                    className="changeColor btn btn-outline-light btn-floating m-1 text-white"
                     role="button"
                   >
                     <i className="twitter">
@@ -98,7 +93,7 @@ const FooterComponent = () => {
 
                   <a
                     href="https://www.linkedin.com/"
-                    className="btn btn-outline-light btn-floating m-1 text-white"
+                    className="changeColor btn btn-outline-light btn-floating m-1 text-white"
                     role="button"
                   >
                     <i className="linkedin">
@@ -108,8 +103,9 @@ const FooterComponent = () => {
 
                   <a
                     href="https://facebook.com/profile.php?id=61555757000659"
-                    className="btn btn-outline-light btn-floating m-1 text-white"
+                    className="changeColor btn btn-outline-light btn-floating m-1 text-white"
                     role="button"
+                    
                   >
                     <i className="facebook">
                       <FaFacebookF />
@@ -117,7 +113,18 @@ const FooterComponent = () => {
                   </a>
                 </div>
               </section>
+
+             
+
+              <section className="footerend d-flex justify-content-between align-items-center flex-wrap">
+               
+
+                
+                
+              </section>
+              
             </div>
+              
           </footer>
         </div>
       </div>

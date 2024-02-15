@@ -69,7 +69,7 @@
 
 }
 body{
-    background: url(/src/assets/images/Home.jpg) no-repeat;
+    background: url(/src/assets/images/Home.jpg) ;
     height: 100vh;
     background-size: cover;
     opacity: 10;

@@ -50,7 +50,7 @@ const CheckPass = () => {
 
   return (
     <Base>
-    <div className="container mt-5">
+    <div className="container mt-5 bg-light">
       <h2>Check Pass</h2>
       <div className="mb-3">
         <TextField

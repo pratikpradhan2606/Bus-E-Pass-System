@@ -58,7 +58,7 @@ function ExpandedCard({ param, setExpanded }) {
       const { amount, id: order_id, currency } = result.data;
 
       const options = {
-          key: "rzp_test_IyrDqNmILScEQd", // Enter the Key ID generated from the Dashboard
+          key: "rzp_test_t6U6FMDUOwMVMj", // Enter the Key ID generated from the Dashboard
           amount: amount.toString(),
           currency: currency,
           name: profileData.name,
@@ -166,6 +166,7 @@ function ExpandedCard({ param, setExpanded }) {
       style={{
         background: param.color.backGround,
         boxShadow: param.color.boxShadow,
+        height:"70%"
       }}
       layoutId="expandableCard"
     >
@@ -174,7 +175,6 @@ function ExpandedCard({ param, setExpanded }) {
           alignSelf: 'flex-end',
           cursor: 'pointer',
           color: 'white',
-
         }}
       >
         <UilTimes onClick={setExpanded} />

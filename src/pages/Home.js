@@ -24,41 +24,43 @@ const Home = () => {
   return (
     <Base>
     <section className="container">
-        <section className="card1">
-         
-          <h2 className="card__name">Daily Pass</h2>
-          <div className="card__parr">
-            <p>"A daily pass provides individuals with convenient and flexible access to services, attractions, or facilities for a single day, offering a cost-effective and hassle-free option for those seeking short-term enjoyment and convenience."
-            </p>
-          </div>
-          {/* <div className="card__linkcont">
-            <a href='/' className="link__card color__link__orange">Learn More</a>
-          </div> */}
-        </section>
-
-        <section className="card2">
-          
-          <h2 className="card__name">Weekly Pass</h2>
-          <div className="card__parr">
-            <p>A weekly bus pass provides commuters with the convenience of unlimited bus rides throughout the week, offering a cost-effective and efficient transportation solution for regular travelers.
-            </p>
-          </div>
-          {/* <div className="card__linkcont">
-            <a href='/' className="link__card color__link__green">Learn More</a>
-          </div> */}
-        </section>
         
-        <section className="card3">
-          
-          <h2 className="card__name">Monthly Pass</h2>
-          <div className="card__parr">
-            <p>"A monthly bus pass provides commuters with cost-effective and convenient unlimited access to public transportation services for an entire month, ensuring a seamless and economical commuting experience."
-            </p>
-          </div>
-          {/* <div className="card__linkcont">
-            <a href='/' className="link__card color__link__dark">Learn More</a>
-          </div> */}
-        </section>
+        <div className="col-lg-3 col-md-10 card1">
+         
+         <h2 className="card__name">Daily Pass</h2>
+         <div className="card__parr">
+           <p>"A daily pass provides individuals with convenient and flexible access to services, attractions, or facilities for a single day, offering a cost-effective and hassle-free option for those seeking short-term enjoyment and convenience."
+           </p>
+         </div>
+         {/* <div className="card__linkcont">
+           <a href='/' className="link__card color__link__orange">Learn More</a>
+         </div> */}
+       </div>
+
+       <section className="card2">
+         
+         <h2 className="card__name">Weekly Pass</h2>
+         <div className="card__parr">
+           <p>A weekly bus pass provides commuters with the convenience of unlimited bus rides throughout the week, offering a cost-effective and efficient transportation solution for regular travelers.
+           </p>
+         </div>
+         {/* <div className="card__linkcont">
+           <a href='/' className="link__card color__link__green">Learn More</a>
+         </div> */}
+       </section>
+       
+       <section className="card3">
+         
+         <h2 className="card__name">Monthly Pass</h2>
+         <div className="card__parr">
+           <p>"A monthly bus pass provides commuters with cost-effective and convenient unlimited access to public transportation services for an entire month, ensuring a seamless and economical commuting experience."
+           </p>
+         </div>
+         {/* <div className="card__linkcont">
+           <a href='/' className="link__card color__link__dark">Learn More</a>
+         </div> */}
+       </section>
+        
         
 
       </section>

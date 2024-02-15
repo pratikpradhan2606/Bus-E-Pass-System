@@ -101,7 +101,9 @@ const MainDash = ({ selectedTab }) => {
           <div className="heading-dashboad">
               <h4>Your Journey, Your Bus Pass – Choose Wisely</h4>
           </div>
-          <Cards />
+          <div className="cards-container">
+            <Cards />
+          </div>
           <br />
           <div className="centered-card glowing-border">
             <p>Click on Below Show Current Pass to see your Current Pass</p>
@@ -115,7 +117,9 @@ const MainDash = ({ selectedTab }) => {
               <div className="modal-overlay" style={{ display: showPass ? 'flex' : 'none' }}>
                 <div className="modal-content" id="modal-content">
                   <div className="aadhar-card">
-                    <img className="modal-photo" id="modal-photo" src={user.picture} alt="User" />
+                    {
+                    //<img className="modal-photo" id="modal-photo" src={user.picture} alt="User" />
+                    }
                     <div className="aadhar-details">
                       <div>
                         <strong>Aadhar Number:</strong> {profileData.aadharNo}

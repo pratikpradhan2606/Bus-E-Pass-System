@@ -11,10 +11,10 @@ const About = () => {
             <section className="section-white">
                 <div className="container" style={{ backgroundColor: 'tranparent' }}>
                     <div className="row">
-                        <div className="col-md-12 text-center">
-                            <h2 className="section-title">The Team Behind Pacifico</h2>
+                        <div className=" text-center">
+                            <h2 className="section-title">The Team Behind E-Pass</h2>
                         </div>
-                        <div className="col-md-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                        <div className="col-lg-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', padding:'0px !important' }}>
                             <div className="team-item">
                                 <img src={Vikas} className="img-fluid team-img1" alt="pic" height={420} width={350} />
                                 <h3>Jaiswal Vikas</h3>
@@ -26,36 +26,36 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                        <div className="col-lg-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
                             <div className="team-item">
                                 <img src={Sakshi} className="img-fluid team-img2" alt="pic" />
                                 <h3>Kale Sakshi</h3>
                                 <div className="team-info">
                                     <p>
-                                        "At the heart of our digital infrastructure, our dedicated backend developers drive the engine of our projects, engineering scalable and secure server-side solutions to seamlessly handle data, optimize performance, and ensure the reliability and efficiency of our systems."              </p>
+                                        "At the heart of our digital infrastructure, our dedicated backend developers drive  engine of projects, engineering scalable,secure server-side solutions to seamlessly optimize performance, and ensure the reliability and efficiency of our systems."              </p>
 
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                        <div className="col-lg-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
                             <div className="team-item">
                                 <img src={Vaishnavi} className="img-fluid team-img3" alt="pic" height={350} width={350} />
                                 <h3>T Vaishnavi</h3>
                                 <div className="team-info">
                                     <p>
-                                        "At the intersection of aesthetics and functionality, our talented UI/UX designers bring visions to life, meticulously crafting visually stunning and intuitively designed interfaces that elevate user experiences, making every interaction with our projects a delightful journey."
+                                        "At the intersection of functionality, our UI/UX designers  meticulously crafting visually stunning and intuitively designed interfaces that elevate user experiences, making every interaction with our projects a delightful journey."
                                     </p>
 
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                        <div className="col-lg-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
                             <div className="team-item">
                                 <img src={Shubhangi} className="img-fluid team-img" alt="pic"/>
                                 <h3>T Shubhangi</h3>
                                 <div className="team-info">
                                     <p>
-                                        "At the core of our data-driven success, our adept database handlers meticulously manage and organize the lifeblood of our projects, ensuring seamless data storage, retrieval, and optimization, fostering reliability and efficiency in every aspect of our digital ecosystem."
+                                        "At the core of our data-driven success, database handlers manage and organize our project, ensuring seamless data storage and optimization, fostering efficiency in every aspect of our digital ecosystem."
                                     </p>
                                 </div>
                                 </div>

@@ -1,4 +1,4 @@
-.Sidebar{
+.Sidebar {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -7,110 +7,97 @@
     color: aliceblue;
 }
 
-
-.logo{
+.logo {
     display: flex;
-    height:5rem;
+    height: 5rem;
     font-weight: bold;
     font-size: 22px;
     align-items: center;
     justify-content: center;
-    gap:1rem;
-    height:4%;
+    gap: 1rem;
     color: aliceblue;
 }
 
-.logo>img{
-    width:3rem;
+.logo > img {
+    width: 3rem;
     height: 3rem;
 }
 
-.logo>span>span{
-    color:var(--blue);
-}
-
-/*Menu*/
-.menu{
+.menu {
     margin-top: 4rem;
-    display: flex;
     flex-direction: column;
-    gap:2rem;
+    gap: 2rem;
 }
 
-.menuItem{
+.menuItem {
+    padding-left: 2%;
     display: flex;
     align-items: center;
     gap: 1rem;
     height: 2.5rem;
-    margin-left:2rem;
+    margin-left: 2rem;
     position: relative;
-    transition:all 300ms ease;
+    transition: all 300ms ease;
     font-size: 14px;
     border-radius: 0.7rem;
-    
-}
-.menuItem:hover{
     cursor: pointer;
 }
 
-.activeTab{
+.menuItem:hover {
+    cursor: pointer;
+}
+
+.activeTab {
     background: var(--activeItem);
     margin-left: 0;
 }
 
-.active::before{
-    content:'';
-    width:8px;
+.active::before {
+    content: '';
+    width: 8px;
     height: 100%;
     background: var(--pink);
     margin-right: calc(1rem - 8px);
 }
-/*
-.menu .menuItem:last-child{
-    position: absolute;
-    bottom:2.3rem;
-    width:100%;
+
+/* Show toggleMenuButton on mobile */
+.toggleMenuButton {
+    display: none; /* Hide toggle button on desktop */
 }
-*/
-@media screen  and (max-width:1200px){
-    .menuItem>span{
+
+/* Media query for showing toggleMenuButton on mobile */
+@media screen and (max-width: 768px) {
+    .Sidebar {
+        width: 100%;
+    }
+    .logo {
         display: none;
     }
-    .logo{
-        display:none;
+    .logo > span {
+        display: none;
+    }
+    /* Show toggleMenuButton on mobile */
+    .toggleMenuButton {
+        display: flex; /* Display toggle button on mobile */
+        align-items: center;
+        justify-content: center;
+        height: 3rem; /* Adjust height as needed */
+    }
+    
+    /* Show menu on mobile */
+    .menu {
+        display: flex;
     }
 }
-@media screen  and (max-width:768px){
-    .Sidebar{
-        display:none;
+
+/* Media query for showing menu directly on desktop */
+@media screen and (min-width: 769px) {
+    /* Hide toggleMenuButton on desktop */
+    .toggleMenuButton {
+        display: flex;
     }
-}
-@media screen  and (max-width:768px){
-    .Sidebar{
-        position:fixed;
-        z-index: 9;
-        background: #ffe0e0;
-        width:55%;
-        padding-right: 1rem;
-        height:100%;
-    }
-    .menuItem>span{
-        display:block;
-    }
-    .logo{
-        display:flex;
-    }
-    .menu .menuItem:last-child{
-        position:relative;
-        margin-top:2rem;
-    }
-    .bars{
-        display:flex;
-        position:fixed;
-        top:2rem;
-        z-index:9;
-        background: #ffe0e0;
-        padding:10px;
-        border-radius: 10px;
+    /* Show menu on desktop */
+    .menu {
+        display: flex;
     }
 }

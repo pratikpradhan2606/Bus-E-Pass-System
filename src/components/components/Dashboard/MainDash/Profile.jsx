@@ -16,6 +16,26 @@ const Profile = () => {
     //dynamically changing value
     setProfileData({ ...profileData, [property]: event.target.value })
   }
+  const handleChangeCity = (event, property) => {
+    setProfileData({
+      ...profileData,
+      address: {
+        ...profileData.address,
+        city: event.target.value
+      }
+    });
+  }
+  
+  const handleChangeZip = (event, property) => {
+    setProfileData({
+      ...profileData,
+      address: {
+        ...profileData.address,
+        zipCode: event.target.value
+      }
+    });
+  }
+  
   const submitForm = async (event) => {
     event.preventDefault()
  
@@ -114,7 +134,34 @@ const Profile = () => {
              
           </Col>
         </Row>
-        
+        <Row>
+          <Col>
+          <FormGroup>
+              <Label for="city" >Enter City</Label>
+              <Input
+                type="text"
+                placeholder='Enter City'
+                id="text"
+                onChange={(e) => handleChangeCity(e, 'city')}
+                value={profileData.address.city}
+              />
+            </FormGroup>
+             
+          </Col>
+          <Col>
+          <FormGroup>
+              <Label for="zipcode" >Enter zipCode</Label>
+              <Input
+                type="number"
+                placeholder='Enter zipCode'
+                id="number"
+                onChange={(e) => handleChangeZip(e, 'zipCode')}
+                value={profileData.address.zipCode}
+              />
+            </FormGroup>
+             
+          </Col>
+        </Row>
         <Button color='primary' type="submit">Update</Button>
       </Form>
       <div className="toast-container">

@@ -8,6 +8,9 @@
 
 color: #ccc;
 }
+
+
+
 .glowing-border {
   position: relative;
   border: 2px solid transparent;
@@ -29,7 +32,7 @@ color: #ccc;
 }
 
 .heading{
-    margin-top: 4%;
+    margin-top: 2%;
     color:rgb(244, 238, 238);
     display: flex;
 }
@@ -135,6 +138,12 @@ h4{
 @media screen  and (max-width:768px){
     .MainDash{
         align-items: center;
+    }
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5%; /* Adjust margin as needed */
     }
 }
 
